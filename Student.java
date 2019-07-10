@@ -49,6 +49,9 @@ public class Student {
 	}
 	public String toString()
 	{
-		return ;
+		return "Student ID : "+this.getId()+" \n"+"Student Name : "+this.getName()+" \n"+"Student Mark1 : "+this.getMark1()+" \n"+"Student Mark2 : "+this.geMark2()+
+		"\n Student Total : "+this.getTotal()+" \n"+"Student Status : "+this.getStatus();	
+		//return this.getId()+" "+this.getName()+" "+this.getMark1()+" "+this.getMark2();
+	}
 	
 }
