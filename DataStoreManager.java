@@ -4,7 +4,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class DataStoreManager {
 
-	public void serializeStudent() {
+	public void serializeStudent(ConcurrentHashMap<Integer,Student> cHashMap) {
 		
 	}
 	
@@ -12,7 +12,7 @@ public class DataStoreManager {
 		
 	}
 	
-	public int loadFileConfiguration() {
+	public int loadConfigurationFile() {
 		int flag = 0;
 		
 		return  flag;
