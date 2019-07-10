@@ -58,6 +58,13 @@ public class Admin implements StudentManagement {
 	}
 
 	public void deleteStudent() {
+		System.out.println("Enter id");
+		Scanner sc = new Scanner(System.in);
+		//u.getInputId(s);
+		int id= sc.nextInt();
+		if(Validate.isPresent(id, chm))
+			 chm.remove(id);
+		viewStudent();
 		
 	}
 
