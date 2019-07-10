@@ -53,5 +53,11 @@ public class Student {
 	public void setMark2(float mark2) {
 		this.mark2 = mark2;
 	}
+	public String toString()
+	{
+		return "Student ID : "+this.getId()+" \n"+"Student Name : "+this.getName()+" \n"+"Student Mark1 : "+this.getMark1()+" \n"+"Student Mark2 : "+this.getMark2()+
+		"\n Student Total : "+this.getTotalMarks()+" \n"+"Student Status : "+this.isStatus();	
+		//return this.getId()+" "+this.getName()+" "+this.getMark1()+" "+this.getMark2();
+	}
 	
 }

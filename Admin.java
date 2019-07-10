@@ -47,7 +47,8 @@ public class Admin implements StudentManagement {
 		}
 		System.out.print("Want to proceed further(y/n) : ");
 		 s= sc.next().charAt(0);
-	}while(s!='n');
+		
+	}while(s!='n' || s!= 'N');
 	}
 	
 	public void saveAndExit() {
@@ -67,12 +68,13 @@ public class Admin implements StudentManagement {
 	}
 	
 	public void viewStudent() {
-		Set<Integer> id = chm.keySet();
+		/*Set<Integer> id = chm.keySet();
 		Iterator<Integer> itr = id.iterator();
 		while(itr.hasNext()) {
 			Student s =chm.get(itr.next());
 			System.out.println(s.getId()+" "+s.getName()+" "+s.getMark1()+" "+s.getMark2());
-		}
+		}*/
+		mm.view(chm);
 	}
 	public void editStudent() {
 		System.out.println("Enter Student id ");
