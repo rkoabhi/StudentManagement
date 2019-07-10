@@ -56,7 +56,7 @@ public class FileManager {
 		
 	}
 	
-		public void serializeStudent(ConcurrentHashMap<Integer,Student> CHMap) {
+	public void serializeStudent(ConcurrentHashMap<Integer,Student> CHMap) {
 		try {
 			FileOutputStream fos = null;
 			fos = new FileOutputStream(mapFile);
