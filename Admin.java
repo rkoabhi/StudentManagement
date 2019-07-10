@@ -19,6 +19,12 @@ public class Admin {
 			case 2 : view();
 			break;
 			case 3: edit();
+			break;
+			case 4: delete();
+			break;
+			case 5: save_and_exit();
+			break;
+			default:System.out.println("WRONGLY ENTERED...")
 		}
 		System.out.print("Want to proceed further(y/n) : ");
 		 s= sc.next().charAt(0);
