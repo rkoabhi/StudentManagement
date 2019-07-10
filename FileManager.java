@@ -10,7 +10,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class FileManager {
+public class FileManager extends DataStoreManager{
 	static String mapFile;
 	int flag=1;
 	
