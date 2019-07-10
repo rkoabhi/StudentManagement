@@ -29,6 +29,7 @@ void edit(Integer studentId ,String name, ConcurrentHashMap<Integer,Student> cHa
 }
 
 void view(ConcurrentHashMap<Integer,Student> cHashMap) {
+		
 		if(cHashMap.isEmpty()) {
 			System.out.println("This operation is not permitted.Student record is Empty!!!");
 			return;
@@ -36,7 +37,6 @@ void view(ConcurrentHashMap<Integer,Student> cHashMap) {
 
 		for(Map.Entry<Integer,Student>  c	: cHashMap.entrySet())
 		{
-			
 			System.out.println((Student)c.getValue());
 		}	
 		}
