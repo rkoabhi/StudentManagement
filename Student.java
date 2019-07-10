@@ -1,12 +1,13 @@
-package com.studentmanagement;
+package StudentManagement;
 
-public class StudentDetail {
+public class Student {
 	private int id;
 	private String name;
-	private float marks1[] = new float[2];
-	private int totalMarks;
+	private float mark1, mark2;
+	private float totalMarks;
 	private boolean status;
-	public int getTotalMarks() {
+	
+	public float getTotalMarks() {
 		return totalMarks;
 	}
 	public void setTotalMarks(int totalMarks) {
@@ -26,20 +27,25 @@ public class StudentDetail {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public float[] getMarks1() {
-		return marks1;
-	}
-	public void setMarks1(float[] marks1) {
-		this.marks1 = marks1;
-	}
+	
 	public boolean isStatus() {
 		return status;
 	}
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-	public int getArraySize() {
-		return marks1.length;
+	
+	public float getMark1() {
+		return mark1;
+	}
+	public void setMark1(float mark1) {
+		this.mark1 = mark1;
+	}
+	public float getMark2() {
+		return mark2;
+	}
+	public void setMark2(float mark2) {
+		this.mark2 = mark2;
 	}
 	
 }

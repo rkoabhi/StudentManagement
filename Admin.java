@@ -1,10 +1,11 @@
-package com.studentmanagement;
+package StudentManagement;
 
 import java.util.Scanner;
 
 public class Admin {
 	UserInput u = new UserInput();
-	
+	Student s = null;
+	@SuppressWarnings("resource")
 	void doAction(){
 		char s;
 	do{
@@ -19,6 +20,7 @@ public class Admin {
 			case 2 : view();
 			break;
 			case 3: edit();
+			
 		}
 		System.out.print("Want to proceed further(y/n) : ");
 		 s= sc.next().charAt(0);
@@ -26,11 +28,11 @@ public class Admin {
 	}
 	
 	public void add() {
-		u.getUserInput();
+		s = u.getUserInput();
 	}
 	
 	public void view() {
-		u.displayUserInput();
+		u.displayUserInput(s);
 	}
 	public void edit() {
 		System.out.println("Enter Student id ");
