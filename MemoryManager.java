@@ -5,7 +5,7 @@ public class MemoryManager extends DataStoreManager{
 
 void add(Student student ,ConcurrentHashMap<Integer,Student> cHashMap){
 		
-		cHashMap.put(student.id,student);	
+		cHashMap.put(student.getId(),student);	
 	}
 	
 void delete(Integer studentID ,ConcurrentHashMap<Integer,Student> cHashMap){
@@ -23,7 +23,7 @@ void edit(Integer studentId ,String name, ConcurrentHashMap<Integer,Student> cHa
 		return;}
 	
 		Student student = cHashMap.get(studentId);
-		student.name = name;
+		student.getName(name);
 		cHashMap.put(studentId, student);	
 		
 }
