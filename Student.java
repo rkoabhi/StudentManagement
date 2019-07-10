@@ -1,6 +1,6 @@
 package com.studentmanagement;
 
-public class StudentDetail {
+public class Student {
 	private int id;
 	private String name;
 	private float marks1[] = new float[2];
