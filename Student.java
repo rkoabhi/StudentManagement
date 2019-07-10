@@ -47,5 +47,8 @@ public class Student {
 	public void setMark2(float mark2) {
 		this.mark2 = mark2;
 	}
+	public String toString()
+	{
+		return ;
 	
 }
