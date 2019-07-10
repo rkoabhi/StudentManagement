@@ -76,7 +76,12 @@ public class Admin implements StudentManagement {
 	}
 	public void editStudent() {
 		System.out.println("Enter Student id ");
-		
+		Scanner sc = new Scanner(System.in);
+		int id = sc.nextInt();
+		if(Validate.isPresent(id, chm)) {
+			String name= sc.nextLine();
+			mm.edit(id, name, chm);
+		}		
 	}
 
 }

@@ -10,8 +10,8 @@ public class Student {
 	public float getTotalMarks() {
 		return totalMarks;
 	}
-	public void setTotalMarks(int totalMarks) {
-		this.totalMarks = totalMarks;
+	public void setTotalMarks() {
+		this.totalMarks = this.mark1+this.mark2;
 	}
 	
 	
@@ -28,11 +28,17 @@ public class Student {
 		this.name = name;
 	}
 	
-	public boolean isStatus() {
-		return status;
+	public String isStatus() {
+		if(this.status)
+			return "P";
+		else
+			return "F";
 	}
-	public void setStatus(boolean status) {
-		this.status = status;
+	public void setStatus() {
+		if(this.totalMarks >= 50)
+			this.status = true;
+		else
+			this.status = false;
 	}
 	
 	public float getMark1() {
