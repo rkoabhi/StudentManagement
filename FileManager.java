@@ -13,7 +13,7 @@ public class FileManager {
 	
 	final String CONFIGURATIONFILE= "/home/kavanabhatkal/Training/configuration.txt";
 	
-	int loadFileConfiguration() {
+	int loadConfigurationFile() {
 		
 		BufferedReader br=null;
 		BufferedWriter bw=null;
