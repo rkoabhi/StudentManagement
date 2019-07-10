@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class UserInput {
 
-	StudentDetails s = new StudentDetails();
+	Student s = new Student();
 	void getUserInput() {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Enter the student id : ");
