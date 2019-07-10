@@ -4,6 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class UserInput {
+<<<<<<< HEAD
 	Scanner sc = null;
 	public void getInputId(Student s) {
 		sc = new Scanner(System.in);
@@ -33,6 +34,20 @@ public class UserInput {
 			System.out.print("Enter Student marks of subject 1 ");
 			s.setMark1(sc.nextFloat());
 			Validate.validateMark(s.getMark1());
+=======
+
+	Student s = new Student();
+	void getUserInput() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the student id : ");
+		s.setId(sc.nextInt());
+		System.out.print("Enter Student name : ");
+		s.setName(sc.next());
+		float marks[]= new float[s.getArraySize()];
+		for(int i=0;i< s.getArraySize();i++) {
+			System.out.print("Enter Student marks in subject : "+(i+1)+" ");
+			marks[i]=sc.nextFloat();
+>>>>>>> 3e3194355baaad604785ee7f081a755bdc503e4c
 		}
 		catch (InvalidInputException e) {
 			System.out.println("Enter a valid input");
