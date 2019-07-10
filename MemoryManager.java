@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class MemoryManager {
+public class MemoryManager extends DataStoreManager{
 
 void add(Student student ,ConcurrentHashMap<Integer,Student> cHashMap){
 		
