@@ -1,17 +1,15 @@
 package StudentManagement;
 
-import java.util.concurrent.ConcurrentHashMap;
-
 public interface StudentManagement {
 
-		void addStudent(ConcurrentHashMap<Integer,Student> conHashMap);
+		void addStudent();
 		
-		void viewStudent(ConcurrentHashMap<Integer,Student> conHashMap);
+		void viewStudent();
 		
-		void deleteStudent(ConcurrentHashMap<Integer,Student> conHashMap);
+		void deleteStudent();
 		
-		void editStudent(ConcurrentHashMap<Integer,Student> conHashMap);
+		void editStudent();
 		
-		void saveAndExit(ConcurrentHashMap<Integer,Student> conHashMap);
+		void saveAndExit();
 		
 }

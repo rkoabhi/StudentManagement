@@ -6,12 +6,23 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 
-public class Admin {
+public class Admin implements StudentManagement {
 	UserInput u = new UserInput();
 	Student s = null;
-	ConcurrentHashMap<Integer, Student> chm = new ConcurrentHashMap<>();
+	MemoryManager mm = null;
+	FileManager fm = null;
+	ConcurrentHashMap<Integer, Student> chm = null;
+	Admin(){
+		MemoryManager mm = new MemoryManager();
+		FileManager fm = new FileManager();
+	}
+	
 	@SuppressWarnings("resource")
 	void doAction(){
+		if(fm.loadConfigurationFile() == 0)
+			chm = new ConcurrentHashMap<>();
+		else
+			chm = fm.deserializeStudent();
 		char s;
 	do{
 		Scanner sc = new Scanner(System.in);
@@ -20,15 +31,15 @@ public class Admin {
 		
 		int i = sc.nextInt();
 		switch(i){
-			case 1: add();
+			case 1: addStudent();
 			break;
-			case 2 : view();
+			case 2 : viewStudent();
 			break;
-			case 3: edit();
+			case 3: editStudent();
 			break;
-			case 4: delete();
+			case 4: deleteStudent();
 			break;
-			case 5: save_and_exit();
+			case 5: saveAndExit();
 			break;
 			default:
 				System.out.println("WRONGLY ENTERED...");
@@ -39,22 +50,23 @@ public class Admin {
 	}while(s!='n');
 	}
 	
-	private void save_and_exit() {
-		// TODO Auto-generated method stub
+	public void saveAndExit() {
+		fm.serializeStudent(chm);
+		System.exit(0);
 		
 	}
 
-	private void delete() {
-		// TODO Auto-generated method stub
+	public void deleteStudent() {
 		
 	}
 
-	public void add() {
+	public void addStudent() {
 		s = u.getUserInput();
-		chm.put(s.getId(), s);
+		mm.add(s, chm);
+//		chm.put(s.getId(), s);
 	}
 	
-	public void view() {
+	public void viewStudent() {
 		Set<Integer> id = chm.keySet();
 		Iterator<Integer> itr = id.iterator();
 		while(itr.hasNext()) {
@@ -62,8 +74,9 @@ public class Admin {
 			System.out.println(s.getId()+" "+s.getName()+" "+s.getMark1()+" "+s.getMark2());
 		}
 	}
-	public void edit() {
+	public void editStudent() {
 		System.out.println("Enter Student id ");
 		
 	}
+
 }
