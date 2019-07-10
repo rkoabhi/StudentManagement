@@ -1,4 +1,4 @@
-package org.veena.miniproject;
+package StudentManagement;
 
 import java.util.concurrent.ConcurrentHashMap;
 

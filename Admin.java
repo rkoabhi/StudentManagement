@@ -1,10 +1,15 @@
 package StudentManagement;
 
+import java.util.Iterator;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+
 
 public class Admin {
 	UserInput u = new UserInput();
 	Student s = null;
+	ConcurrentHashMap<Integer, Student> chm = new ConcurrentHashMap<>();
 	@SuppressWarnings("resource")
 	void doAction(){
 		char s;
@@ -46,10 +51,16 @@ public class Admin {
 
 	public void add() {
 		s = u.getUserInput();
+		chm.put(s.getId(), s);
 	}
 	
 	public void view() {
-		u.displayUserInput(s);
+		Set<Integer> id = chm.keySet();
+		Iterator<Integer> itr = id.iterator();
+		while(itr.hasNext()) {
+			Student s =chm.get(itr.next());
+			System.out.println(s.getId()+" "+s.getName()+" "+s.getMark1()+" "+s.getMark2());
+		}
 	}
 	public void edit() {
 		System.out.println("Enter Student id ");
