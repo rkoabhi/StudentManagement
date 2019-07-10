@@ -13,8 +13,8 @@ public class Admin implements StudentManagement {
 	FileManager fm = null;
 	ConcurrentHashMap<Integer, Student> chm = null;
 	Admin(){
-		MemoryManager mm = new MemoryManager();
-		FileManager fm = new FileManager();
+		mm = new MemoryManager();
+		fm = new FileManager();
 	}
 	
 	@SuppressWarnings("resource")
