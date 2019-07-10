@@ -47,7 +47,8 @@ public class Admin implements StudentManagement {
 		}
 		System.out.print("Want to proceed further(y/n) : ");
 		 s= sc.next().charAt(0);
-	}while(s!='n');
+		
+	}while(s!='n' && s!= 'N');
 	}
 	
 	public void saveAndExit() {
