@@ -1,10 +1,14 @@
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class FileManager {
 	static String mapFile;
@@ -44,7 +48,6 @@ public class FileManager {
 					return flag;
 				}
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		
@@ -52,6 +55,32 @@ public class FileManager {
 		return flag;
 		
 	}
-}
 	
-
+		public void serializeStudent(ConcurrentHashMap<Integer,Student> CHMap) {
+		try {
+			FileOutputStream fos = null;
+			fos = new FileOutputStream(mapFile);
+			ObjectOutputStream oos = null;
+			oos = new ObjectOutputStream(fos);
+			oos.writeObject(CHMap);
+			oos.close();
+			fos.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public ConcurrentHashMap<Integer,Student> deserializeStudent() {
+		ConcurrentHashMap<Integer,Student> CHMap=new ConcurrentHashMap<>();
+		try {
+			FileInputStream fis=null;
+			fis=new FileInputStream(mapFile);
+			ObjectInputStream ois=null;
+			ois=new ObjectInputStream(fis);
+			CHMap=(ConcurrentHashMap<Integer, Student>) ois.readObject();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return CHMap;
+	}
+}
